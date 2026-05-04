@@ -79,6 +79,9 @@ section {
     height: 100vh;
     background-color: var(--bg-color);
     z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro-line {
@@ -95,6 +98,15 @@ section {
 .intro-line.line-v {
     width: 1px;
     transform-origin: top; /* Animate scaleY from the top */
+}
+
+.intro-text {
+    font-family: var(--primary-font);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: var(--text-color);
+    opacity: 0; /* Start hidden */
+    white-space: nowrap;
+    position: relative; /* Keep it within the flex flow */
 }
 
 /* --- HEADER --- */

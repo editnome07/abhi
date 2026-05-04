@@ -8,32 +8,38 @@ const FADE_IN_UP = {
 };
 
 /**
- * Plays the updated, longer intro animation with a line-drawing effect.
+ * Plays the intro animation with line-drawing and welcome text.
  */
 export function playIntroAnimation(): anime.AnimeTimelineInstance {
   const tl = anime.timeline({
     easing: 'easeInOutExpo',
-    duration: 1000,
   });
 
-  // 1. Animate the lines drawing themselves onto the screen in a staggered sequence.
+  // 1. Animate the lines drawing themselves onto the screen.
   tl.add({
     targets: '.intro-line',
     opacity: [0, 1],
-    // Animate scaleX for horizontal lines and scaleY for vertical lines
     scaleX: (el) => (el.classList.contains('line-h') ? [0, 1] : 1),
     scaleY: (el) => (el.classList.contains('line-v') ? [0, 1] : 1),
+    duration: 1000,
     delay: anime.stagger(200),
   })
-  // 2. After the lines are drawn, hold them for a moment, then fade them out.
+  // 2. Fade in the welcome text as the lines finish drawing.
   .add({
-    targets: '.intro-line',
-    opacity: 0,
-    duration: 500,
+    targets: '.intro-text',
+    opacity: [0, 1],
+    duration: 1000,
     easing: 'easeOutExpo',
-    delay: 500, // This creates the pause
+  }, '-=500') // Overlap this animation for a smoother effect
+  // 3. Fade out the lines and the text together after a pause.
+  .add({
+    targets: ['.intro-line', '.intro-text'],
+    opacity: 0,
+    duration: 600,
+    easing: 'easeInExpo',
+    delay: 1000, // Hold everything on screen for 1 second
   })
-  // 3. Finally, fade out the entire black overlay to reveal the site.
+  // 4. Finally, fade out the entire black overlay to reveal the site.
   .add({
     targets: '.intro-overlay',
     opacity: [1, 0],
@@ -42,7 +48,7 @@ export function playIntroAnimation(): anime.AnimeTimelineInstance {
       // Clean up the overlay from the DOM after the animation finishes
       document.querySelector('.intro-overlay')?.remove();
     }
-  }, '-=500'); // Overlap this animation slightly for a smoother transition
+  }, '-=300'); // Overlap slightly
 
   return tl;
 }
