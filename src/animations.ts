@@ -8,27 +8,41 @@ const FADE_IN_UP = {
 };
 
 /**
- * Plays the initial intro animation.
+ * Plays the updated, longer intro animation with a line-drawing effect.
  */
 export function playIntroAnimation(): anime.AnimeTimelineInstance {
   const tl = anime.timeline({
     easing: 'easeInOutExpo',
+    duration: 1000,
   });
 
+  // 1. Animate the lines drawing themselves onto the screen in a staggered sequence.
   tl.add({
-    targets: '.intro-grid',
-    scale: [1, 50],
-    opacity: [1, 0],
-    duration: 1000,
+    targets: '.intro-line',
+    opacity: [0, 1],
+    // Animate scaleX for horizontal lines and scaleY for vertical lines
+    scaleX: (el) => (el.classList.contains('line-h') ? [0, 1] : 1),
+    scaleY: (el) => (el.classList.contains('line-v') ? [0, 1] : 1),
+    delay: anime.stagger(200),
   })
+  // 2. After the lines are drawn, hold them for a moment, then fade them out.
+  .add({
+    targets: '.intro-line',
+    opacity: 0,
+    duration: 500,
+    easing: 'easeOutExpo',
+    delay: 500, // This creates the pause
+  })
+  // 3. Finally, fade out the entire black overlay to reveal the site.
   .add({
     targets: '.intro-overlay',
     opacity: [1, 0],
-    duration: 500,
+    duration: 800,
     complete: () => {
+      // Clean up the overlay from the DOM after the animation finishes
       document.querySelector('.intro-overlay')?.remove();
     }
-  }, '-=500');
+  }, '-=500'); // Overlap this animation slightly for a smoother transition
 
   return tl;
 }
