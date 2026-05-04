@@ -109,6 +109,5 @@ The quickest way to deploy is using the Vercel CLI.
     vercel --prod
     ```
     Follow the on-screen prompts. When asked for the directory, ensure it points to the `./dist` folder. Vercel will upload the files and provide you with a live URL.
-```
 
 # this Website is created by [Kr Satyam](https://github.com/krsatyam11/)
