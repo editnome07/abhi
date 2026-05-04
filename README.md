@@ -1,4 +1,3 @@
----
 
 ```markdown
 # Abhi's Motion Design Portfolio
