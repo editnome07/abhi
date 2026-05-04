@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Thorne | Motion Designer & Video Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- NOTE: Avigea is a premium font. Replace with a similar free alternative like "Playfair Display" if needed. -->
+    <link href="https://fonts.cdnfonts.com/css/avigea" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Intro Animation Overlay -->
+    <div class="intro-overlay">
+        <div class="intro-grid"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="smooth-scroll-container">
+        <header class="main-header">
+            <div class="logo">AT.</div>
+            <nav>
+                <a href="#portfolio" class="nav-link">Work</a>
+                <a href="#footer" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 1. Hero Section -->
+            <section class="hero">
+                <div class="hero-background-particles"></div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 data-animation="stagger-fade-in">Alex Thorne</h1>
+                        <p class="role" data-animation="stagger-fade-in">Motion Graphic Designer & Video Editor</p>
+                        <p class="tagline" data-animation="stagger-fade-in">Design that moves.</p>
+                    </div>
+                    <div class="hero-visual" data-animation="zoom-fade-in">
+                        <video autoplay muted loop playsinline src="https://cdn.dribbble.com/userupload/10905353/file/original-b96235e16f735d45908863b154065403.mp4" class="hero-video"></video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Portfolio Grid -->
+            <section id="portfolio" class="portfolio-grid-section">
+                <div class="masonry-grid">
+                    <!-- Item 1: Static Image -->
+                    <div class="grid-item" data-tag="Design" data-scroll-reveal>
+                        <img src="https://i.pinimg.com/564x/0f/00/01/0f000155a5e3d7454823ff50a4170c0c.jpg" alt="Static Poster Design">
+                        <div class="grid-item-overlay">
+                            <span class="item-tag">Design</span>
+                        </div>
+                    </div>
+                    <!-- Item 2: Video -->
+                    <div class="grid-item wide" data-tag="Motion" data-scroll-reveal>
+                        <video muted loop playsinline src="https://cdn.dribbble.com/userupload/12584110/file/original-5c74f51e51b151a6156d43e3c1537a7b.mp4"></video>
+                        <div class="grid-item-overlay">
+                            <span class="item-tag">Motion</span>
+                        </div>
+                    </div>
+                    <!-- Item 3: Text Block -->
+                    <div class="grid-item text-block" data-scroll-reveal>
+                        <h3>From Static to Motion</h3>
+                        <p>Exploring the evolution of still designs into compelling animated narratives.</p>
+                    </div>
+                    <!-- Item 4: Static Image -->
+                    <div class="grid-item tall" data-tag="Branding" data-scroll-reveal>
+                        <img src="https://i.pinimg.com/564x/24/ac/e9/24ace965c48bce2878144ae2c99b537d.jpg" alt="Business Card Design">
+                        <div class="grid-item-overlay">
+                             <span class="item-tag">Branding</span>
+                        </div>
+                    </div>
+                    <!-- Item 5: Static Image -->
+                    <div class="grid-item" data-tag="Design" data-scroll-reveal>
+                        <img src="https://i.pinimg.com/564x/a4/c8/16/a4c8167f4746f5e3223041a134a4bc10.jpg" alt="Menu Design">
+                        <div class="grid-item-overlay">
+                             <span class="item-tag">Design</span>
+                        </div>
+                    </div>
+                    <!-- Item 6: Video -->
+                    <div class="grid-item" data-tag="Motion" data-scroll-reveal>
+                         <video muted loop playsinline src="https://cdn.dribbble.com/userupload/8635439/file/original-1919427ebf97c0062b881358b5b3769c.mp4"></video>
+                        <div class="grid-item-overlay">
+                            <span class="item-tag">Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Featured Transformation Project -->
+            <section class="featured-project" id="featured">
+                 <div class="featured-text-content" data-scroll-reveal>
+                    <h2>Featured Transformation</h2>
+                    <p>Bringing a static brand concept to life through dynamic motion.</p>
+                </div>
+                <div class="transformation-container">
+                    <div class="before-after-split">
+                        <div class="split-panel before">
+                            <img src="https://i.pinimg.com/564x/16/54/a8/1654a8b79e8c20202d0ae8645e7515f4.jpg" alt="Static Design Before">
+                            <span class="status-label">Before: Static</span>
+                        </div>
+                        <div class="split-panel after">
+                            <video autoplay muted loop playsinline src="https://cdn.dribbble.com/userupload/4429997/file/original-b9d9bc1819323c2a39a797c36a2ab550.mp4"></video>
+                             <span class="status-label">After: Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Process Section -->
+            <section class="process" id="process">
+                <h2 data-scroll-reveal>A Refined Process</h2>
+                <div class="process-flow">
+                    <div class="process-step" data-scroll-reveal>
+                        <span class="step-number">01</span>
+                        <h3>Concept</h3>
+                        <p>Defining the core message and visual strategy.</p>
+                    </div>
+                    <div class="process-connector" data-scroll-reveal></div>
+                    <div class="process-step" data-scroll-reveal>
+                        <span class="step-number">02</span>
+                        <h3>Design</h3>
+                        <p>Crafting static assets with motion in mind.</p>
+                    </div>
+                    <div class="process-connector" data-scroll-reveal></div>
+                    <div class="process-step" data-scroll-reveal>
+                        <span class="step-number">03</span>
+                        <h3>Motion</h3>
+                        <p>Animating key elements to tell a story.</p>
+                    </div>
+                    <div class="process-connector" data-scroll-reveal></div>
+                    <div class="process-step" data-scroll-reveal>
+                        <span class="step-number">04</span>
+                        <h3>Final</h3>
+                        <p>Delivering polished, high-impact visuals.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 5. CTA Footer -->
+        <footer id="footer" class="cta-footer">
+            <h2 data-scroll-reveal>Let's create something that moves.</h2>
+            <a href="mailto:hello@alexthorne.design" class="cta-button" data-scroll-reveal>hello@alexthorne.design</a>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
