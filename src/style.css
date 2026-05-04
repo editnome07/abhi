@@ -79,15 +79,23 @@ section {
     height: 100vh;
     background-color: var(--bg-color);
     z-index: 10000;
-    display: grid;
-    place-items: center;
-}
-.intro-grid {
-    width: 80%;
-    height: 80%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.intro-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0; /* Start hidden */
+}
+
+.intro-line.line-h {
+    height: 1px;
+    transform-origin: left; /* Animate scaleX from the left */
+}
+
+.intro-line.line-v {
+    width: 1px;
+    transform-origin: top; /* Animate scaleY from the top */
+}
 
 /* --- HEADER --- */
 .main-header {
